@@ -1,0 +1,86 @@
+[package]
+name = "DigtalTalk"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "DigtalTalk"
+path = "src/lib.rs"
+
+
+[dependencies]
+sherpa-sys = { path = "./crates/sherpa-sys", version = "0.1.9" }
+tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
+log = "0.4"
+log4rs = "1.2.0"
+tokio = { version = "1.38.2", features = [
+    "net",
+    "io-util",
+    "io-std",
+    "macros",
+    "sync",
+    "rt-multi-thread",
+    "process",
+] }
+serde_json = "1.0"
+# strum = { version = "0.27", features = ["derive"] }
+serde_repr = "0.1"
+lazy_static = "1.5.0"
+dotenv = "0.15.0"
+chrono = { version = "^0.4.23", features = ["serde"] }
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tokio-util = "0.7"
+rand = "0.9.1"
+actix-web = { version = "4.3", features = ["openssl"] }
+actix = "0.13.0"
+actix-ws = "0.3"
+actix-files = "0.6"
+actix-cors = "0.6.4"
+# tokio-tungstenite = "0.20"
+uuid = { version = "1.18", features = ["v4"] }
+clap = { version = "4.2.4", features = ["derive"] }
+md5 = "0.8"
+futures = { version = "^0.3.26", features = ["executor", "thread-pool"] }
+stun_codec = "0.3.5"
+rustun = "0.5"
+trackable = "1.2.0"
+fibers_global = "0.1.2"
+webrtc = { version = "0.14", path = "./crates/webrtc/webrtc" }
+# , path = "./crates/webrtc/webrtc"
+regex = "1.7.1"
+openssl = "0.10"
+bytes = "1.3.0"
+base64 = "0.13.0"
+sdp = "0.5.3"
+hmac = "0.12"
+sha2 = "0.10.8"
+url = "2.5"
+reqwest = "0.12"
+# neteq = "0.7"
+rubato = "0.16"
+opus = "0.3"
+bytemuck = "1.24"
+webrtc-audio-processing = "0.5"
+# audiopus = "0.3.0-rc.0"
+# percent-encoding = "2.3"
+# urlencoding = "2.1"
+# rust-crypto = "^0.2"
+# notify = "8.2"
+# toml = "0.9"
+# reqwest = "0.12"
+# sys-locale = "0.3"
+# json5 = "0.4"
+# ansi_term = "0.12"
+# proc-macro2 = "1"
+# quote = "1"
+# syn = { version = "2", features = ["full"] }
+
+[dev-dependencies]
+hound = "3.5"
+
+[features]
+default = []
+tts = ["sherpa-sys/tts"]
+cuda = ["sherpa-sys/cuda"]
+directml = ["sherpa-sys/directml"]

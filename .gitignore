@@ -1,0 +1,6 @@
+/target
+/dst/*
+/bk
+/crates
+/log/*.log
+./crates/sherpa-sys/sherpa-onnx

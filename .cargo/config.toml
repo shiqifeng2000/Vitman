@@ -1,0 +1,24 @@
+# [source.crates-io]
+# replace-with = 'default'
+# [source.default]
+# registry = "https://rsproxy.cn/crates.io-index"
+# # registry = "https://crates.io-index"
+# [registries.default]
+# index = "https://rsproxy.cn/crates.io-index"
+# # index = "https://crates.io-index"
+# [net]
+# git-fetch-with-cli = true
+
+# [target.aarch64-linux-android]
+# ar = "/data/workspace/android/android-ndk-r26b/arm64/bin/llvm-ar"
+# linker = "/data/workspace/android/android-ndk-r26b/arm64/bin/aarch64-linux-android-clang"
+# rustflags = ["-C", "target-feature=+neon"]
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-args=-Wl,-rpath,./libs"]
+
+[env]
+LD_LIBRARY_PATH = "./libs"
+# [env]
+# FFMPEG_INCLUDE_DIR = "/usr/local/include"
+# FFMPEG_LIBS_DIR = "/usr/local/lib"

@@ -1,0 +1,23 @@
+# 忽略所有不需要的文件
+.git/
+.github/
+.target/
+*.log
+Dockerfile
+.dockerignore
+.env.local
+README.md
+
+# 开发相关文件
+.vscode/
+.idea/
+
+# 测试和文档
+tests/
+doc/
+
+# 构建缓存
+.cargo/registry/
+.cargo/git/
+
+bk
